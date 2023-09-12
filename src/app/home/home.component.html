@@ -1,1 +1,17 @@
-<p>home works!</p>
+<h1 class="m-5 text-center">Liste des pokémons</h1>
+<div class="card-group">
+    <div *ngFor="let pokemon of pokemons">
+        <div class="card m-2" style="width: 18rem;" >
+            <img src="{{pokemon.picture}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{pokemon.name}}</h5>
+              <p class="card-text">HP : {{pokemon.hp}}</p>
+              <p class="card-text">CP : {{pokemon.cp}}</p>
+              <p class="card-text">Types : {{pokemon.types}}</p>
+              <p class="card-text">Types : {{pokemon.created}}</p>
+              <a routerLink="/details" class="btn btn-primary">Détails</a>
+              <a routerLink="/delete" class="btn btn-warning">Supprimer</a>
+            </div>
+          </div>
+    </div>
+</div>

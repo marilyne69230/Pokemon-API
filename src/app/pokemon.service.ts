@@ -10,7 +10,11 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-  getPokemon(): Observable<PokemonInterface> {
-    return this.http.get<PokemonInterface>('http://vps204.tyrolium.fr/apiPokemon/index.php?controller=pokemon&task=getAll')
+  getPokemon(): Observable<PokemonInterface[]> {
+    return this.http.get<PokemonInterface[]>('http://vps204.tyrolium.fr/apiPokemon/index.php?controller=pokemon&task=getAll')
+  }
+
+  fetchById(): Observable<PokemonInterface[]> {
+    return this.http.get<PokemonInterface[]>('http://vps204.tyrolium.fr/apiPokemon/index.php?controller=pokemon&task=getAll')
   }
 }
