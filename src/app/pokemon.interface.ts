@@ -8,3 +8,5 @@ export interface PokemonInterface {
     types: string;
     created: string;
 }
+
+export interface ResultPokemonApi

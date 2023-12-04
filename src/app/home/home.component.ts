@@ -9,14 +9,21 @@ import { PokemonService } from './../pokemon.service';
 })
 export class HomeComponent implements OnInit {
 
-  pokemon: PokemonInterface | undefined;
-  pokemons: PokemonInterface[] = [];
+  pokemonsList: PokemonInterface[] = [];
+  pokemonSelected:PokemonInterface[] | undefined;
 
-  constructor(private PokemonService: PokemonService) {}
+  constructor(private service: PokemonService) {}
 
   ngOnInit() {
-    this.PokemonService.getPokemon().subscribe(data => {
-      this.pokemons = data;
+    this.service.getPokemons().subscribe(pokemonListResult => {
+      this.pokemonsList = pokemonListResult;
+      console.table(this.pokemonsList);
+    });
+
+  }
+  viewOnePokemn(id:number) {
+    this.service.getPokemonhById(id).subscribe(data => {
+      this.pokemonsList = data;
     })
   }
 }

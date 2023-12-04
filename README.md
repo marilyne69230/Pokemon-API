@@ -1,1 +1,1 @@
-## Porjet de formation ,récupération de données via l'API
+## Projet de formation ,récupération de données via l'API
